@@ -1,3 +1,7 @@
+<?php
+// Puedes agregar aquí conexión a BD, sesiones, etc. si lo necesitas.
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,9 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soporte TI - Sistema de Tickets</title>
 
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
 
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="icons/icon-192.png" type="image/png">
@@ -16,7 +18,6 @@
 </head>
 
 <body class="bg-light d-flex flex-column min-vh-100">
-
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
     <div class="container">
@@ -27,22 +28,21 @@
     </div>
   </nav>
 
-  
   <main class="flex-fill">
     <div class="container mt-4">
       <div class="text-center mb-4">
         <h2 class="fw-bold text-primary">Sistema de Registro de Tickets</h2>
         <p class="lead text-secondary mt-3">
           Bienvenido al portal de soporte técnico.  
-          Aquí podrás registrar tus incidencias, solicitar ayuda o reportar problemas relacionados con tu equipo,
-          red o sistemas informáticos.  
-          Nuestro equipo revisará tu solicitud y te contactará con una solución lo antes posible.
+          Aquí podrás registrar tus incidencias y reportar problemas de tu equipo o red.
         </p>
       </div>
 
       <div class="card shadow-sm mx-auto" style="max-width: 600px;">
         <div class="card-body">
-          <form action method="POST" enctype="multipart/form-data">
+
+          <!-- 🔹 FORMULARIO ENVIADO A guardar_ticket.php -->
+          <form action="guardar_ticket.php" method="POST" enctype="multipart/form-data">
 
             <div class="mb-3">
               <label for="nombre_usuario" class="form-label fw-semibold">👤 Nombre completo</label>
@@ -79,15 +79,12 @@
     </div>
   </main>
 
-  <!-- 🔹 Pie de página -->
   <footer class="bg-primary text-white text-center py-3 mt-auto">
     <p class="mb-0">&copy; 2025 Departamento de Tecnología - Soporte TI</p>
   </footer>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -97,6 +94,8 @@
       });
     }
   </script>
+
 </body>
 </html>
+
 
